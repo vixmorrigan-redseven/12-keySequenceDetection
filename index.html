@@ -10,9 +10,22 @@
   const pressed = [];
   const secretCode ='vixiechu';
 
+  let timeoutId;
+    function timeDelay() {
+
+      timeoutId = window.setTimeout(window.alert, 500, 'Too Slow...');
+      
+    }
+    function clearAlert() {
+      if (timeoutId !== null) window.clearTimeout(timeoutId);
+    } 
+  
+
+
   window.addEventListener('keyup', (e) => {
     console.log(e.key);
     pressed.push(e.key);
+    clearAlert(); 
 
     pressed.splice(-secretCode.length -1, pressed.length - secretCode.length)
     ;
@@ -21,7 +34,7 @@
      alert('You found the secret Vixiechu code!');
    }
    console.log(pressed);
-
+   timeDelay();
   });
 
 </script>

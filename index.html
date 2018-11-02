@@ -25,6 +25,7 @@
   window.addEventListener('keyup', (e) => {
     console.log(e.key);
     pressed.push(e.key);
+    
     clearAlert(); 
 
     pressed.splice(-secretCode.length -1, pressed.length - secretCode.length)
